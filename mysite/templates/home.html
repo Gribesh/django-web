@@ -1,0 +1,270 @@
+
+<!doctype html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <title>Official Visit Nepal</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static 'img/ntm-logo.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aos.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+
+  <body>
+    
+    <!--nav gribesh-->
+    <header class="site-header" >
+      <div class="container-fluid" >
+        <div class="row">
+            <nav class="navbar navbar-expand" style="z-index: 1;">
+                <div class="container">
+                  <a class="navbar-brand" href="{% url 'home' %}">NEPAL</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                      </li>
+                      {% if user.is_authenticated %}
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'secret' %}">Book a Hotel</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'secret2' %}">Plan Trips</a>
+                        </li>
+                      {% endif %}
+                    </ul>
+                    {% if user.is_authenticated %}
+                      <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ user.username }}
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+                          </div>
+                        </li>
+                      </ul>
+                    {% else %}
+                      <form class="form-inline my-2 my-lg-0">
+                        <a href="{% url 'login' %}" class="btn btn-primary ml-2">Log in</a>
+                        <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+                      </form>
+                    {% endif %}
+                  </div>
+                </div>
+              </nav>
+            <!-- END menu-toggle -->
+            
+
+            <div class="site-navbar js-site-navbar">
+              <nav role="navigation">
+                <div class="container">
+                  <div class="row full-height align-items-center">
+                    <div class="col-md-6">
+                      <ul class="list-unstyled menu">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="hotel.html">Hotel</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6 extra-info">
+                      <div class="row">
+                        <div class="col-md-6 mb-5">
+                          <h3>Contact Info</h3>
+                          <p>Kathmandu,Nepal</p>
+                          <p>gribeshdhakal@gmail.com</p>
+                          <p>(+91) 9108183245</p>
+                          
+                        </div>
+                        <div class="col-md-6">
+                          <h3>Connect With Us</h3>
+                          <ul class="list-unstyled">
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Instagram</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- END head -->
+
+    <section class="site-hero overlay" style="background-image: url({% static 'img/img-001@2x.jpg' %})">
+      <div class="container">
+        <div class="row site-hero-inner justify-content-center align-items-center">
+          <div class="col-md-10 text-center">
+            <h1 class="heading" data-aos="fade-up">Visit Nepal 2020</h1>
+            <p class="sub-heading mb-5" data-aos="fade-up" data-aos-delay="100">EXPERIENCES OF A LIFETIME</p>
+            <p data-aos="fade-up" data-aos-delay="100"><a href="#" class="btn uppercase btn-primary mr-md-2 mr-0 mb-3 d-sm-inline d-block">Explore The Beauty</a> <a href="#" class="btn uppercase btn-outline-light d-sm-inline d-block">Download</a></p>
+          </div>
+        </div>
+        <!-- <a href="#" class="scroll-down">Scroll Down</a> -->
+      </div>
+    </section>
+    <!-- END section -->
+
+    
+    <section class="section slider-section">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-md-8">
+            <h2 class="heading" data-aos="fade-up">EXPERIENCES OF A LIFETIME</h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">Coming to Nepal is coming to an experience that is only yours. From the remotest corners to the urban landscape, Nepal embodies a sensory experience of colours, sounds, sights and tastes. Visit Nepal welcomes you to life’s amazing moments.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="home-slider major-caousel owl-carousel mb-5" data-aos="fade-up" data-aos-delay="200">
+              <div class="slider-item">
+                <img src="{% static 'img/event-001.jpg' %}" alt="Image placeholder" class="img-fluid">
+              </div>
+              <div class="slider-item">
+                <img src="{% static 'img/event-002.jpg' %}" alt="Image placeholder" class="img-fluid">
+              </div>
+              <div class="slider-item">
+                <img src="{% static 'img/event-003.jpg' %}" alt="Image placeholder" class="img-fluid">
+              </div>
+              <div class="slider-item">
+                <img src="{% static 'img/event-004.jpg' %}" alt="Image placeholder" class="img-fluid">
+              </div>
+              <div class="slider-item">
+                <img src="{% static 'img/event-005.jpg' %}" alt="Image placeholder" class="img-fluid">
+              </div>
+              <div class="slider-item">
+                <img src="{% static 'img/event-006.jpg' %}" alt="Image placeholder" class="img-fluid">
+              </div>
+            </div>
+            <!-- END slider -->
+          </div>
+
+          <div class="col-md-12 text-center"><a href="#" class="">View More Photos</a></div>
+        
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    
+    <section class="section blog-post-entry bg-pattern">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-md-8">
+            <h2 class="heading" data-aos="fade-up">EVENTS 2020 Special Events</h2>
+            <p class="lead" data-aos="fade-up">Welcome visitors to celebrate the year 2020 which is chosen as national tourism year of Nepal after the year 2011 which was the primary authority tourism year of new Federal Democratic Republic of Nepal. The government and tourism department of Nepal authoritatively reported that Nepal will take year 2020 as "Visit Nepal 2020", a year committed to tourism industry of Nepal with vision of making a reasonable brand picture of Nepal as travel and vacationer destination, backing up the tourism foundations of Nepal, enhance the growth of tourism industry, and enhance locale tourism as supportable industry. The legislature has wanted to accommodate more than one million visitors amid the year of “Visit Nepal 2020”.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12 post" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="media media-custom d-block mb-4">
+              <a href="#" class="mb-4 d-block"><img src="{% static 'img/htm-featured.jpg' %}" alt="Image placeholder" class="img-fluid"></a>
+              <div class="media-body">
+                <span class="meta-post">November 10,2019</span>
+                <h2 class="mt-0 mb-3"><a href="#">Reasons to Visit Pokhara</a></h2>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12 post" data-aos="fade-up" data-aos-delay="200">
+            <div class="media media-custom d-block mb-4">
+              <a href="#" class="mb-4 d-block"><img src="{% static 'img/event-008.jpg' %}" alt="Image placeholder" class="img-fluid"></a>
+              <div class="media-body">
+                <span class="meta-post">November 10,2019</span>
+                <h2 class="mt-0 mb-3"><a href="#">Five Ancient Articrafts</a></h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12 post" data-aos="fade-up" data-aos-delay="300">
+            <div class="media media-custom d-block mb-4">
+              <a href="#" class="mb-4 d-block"><img src="{% static 'img/event-009.jpg' %}" alt="Image placeholder" class="img-fluid"></a>
+              <div class="media-body">
+                <span class="meta-post">November 10,2019</span>
+                <h2 class="mt-0 mb-3"><a href="#">Five Popular Events</a></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    
+    <footer class="section footer-section">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-md-3 mb-5">
+            <ul class="list-unstyled link">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <ul class="list-unstyled link">
+              <li><a href="#">Our Location</a></li>
+              <li><a href="#">The Hosts</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Restaurant</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5 pr-md-5 contact-info">
+            <p><span class="d-block">Address:</span> <span>Kathmandu, Nepal</span></p>
+            <p><span class="d-block">Phone:</span> <span> (+91) 9108183245</span></p>
+            <p><span class="d-block">Email:</span> <span> gribeshdhakal@gmail.com</span></p>
+          </div>
+          <div class="col-md-3 mb-5">
+            <p>Sign up for our newsletter</p>
+            <form action="#" class="footer-newsletter">
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Your email...">
+                <button type="submit" class="btn"><span class="fa fa-paper-plane"></span></button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row bordertop pt-5">
+          <p class="col-md-6 text-left"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved. 
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            
+          <p class="col-md-6 text-right social">
+            <a href="#"><span class="fa fa-tripadvisor"></span></a>
+            <a href="#"><span class="fa fa-facebook"></span></a>
+            <a href="#"><span class="fa fa-twitter"></span></a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- <script src="js/jquery.waypoints.min.js"></script> -->
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
